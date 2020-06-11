@@ -14,7 +14,7 @@ weatherForm.addEventListener('submit', (e) => {
     if (searchInputVal == "") {
         console.log('Digite um nome para a cidade');
     } else {
-        fetch('http://localhost:3000/weather/test/?search=' + searchInputVal).then((response) => {
+        fetch('/weather/test/?search=' + searchInputVal).then((response) => {
             response.json().then((data) => {
                 if (data.error) {
                     console.log(data.error);
