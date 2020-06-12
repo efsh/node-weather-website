@@ -1,7 +1,16 @@
-h1, h2, hr {
-    color: #c0c0c0;
+body {
+    padding-top: 5rem;
+}
+.efsh-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
 }
 
 img {
     width: 200px;
+}
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
 }

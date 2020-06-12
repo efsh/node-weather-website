@@ -21,35 +21,27 @@ hbs.registerPartials(partialsPath);
 app.use(express.static(pubDirPath));
 
 app.get('', (req, res) => {
-    res.render('index', {
-        title:'Personal page',
+    res.render('primary', {
+        title:'Weather Website',
         name:'Eduardo Henriques'
     });
 });
 
 app.get('/about', (req, res) => {
-    res.render('index', {
-        title:'About page',
+    res.render('secondary', {
+        title:'About',
         name:'Eduardo Henriques',
-        img: '<img src="./img/profile-small.jpg"/>'
     });
 });
 
 app.get('/help', (req, res) => {
-    res.render('index', {
+    res.render('secondary', {
         title:'Help page',
         name:'Eduardo Henriques'
     });
 });
 
 app.get('/weather', (req, res) => {
-    res.render('weather', {
-        title:'Weather page',
-        name:'Eduardo Henriques'
-    });
-});
-
-app.get('/weather/test', (req, res) => {
 
     if (!req.query.search){
         return res.send({
@@ -84,6 +76,7 @@ app.get('/weather/test', (req, res) => {
 
 app.get('*', (req, res) => {
     res.render('404', {
+        title:'404',
         name:'Eduardo Henriques'
     });
 });

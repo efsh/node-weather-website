@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>404 | Weather Site</title>
+        <title>About | Weather Site</title>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="./css/style.css" />
@@ -13,8 +13,12 @@
         <main role="main" class="flex-shrink-0">
             <div class="container efsh-template">
                 <h1 class="mt-5">{{title}}</h1>
-                <p class="lead">Oops! We get a 404 error!</p>
-                <p></p>
+                <p class="lead">This site was created by {{name}}.</p>
+                <p> 
+                    It provide data from 
+                    <a href="https://weatherstack.com/documentation" target="_blank">weatherstack.com</a> and 
+                    <a href="https://docs.mapbox.com/api/search/" target="_blank">mapbox.com</a>.
+                </p>
             </div>
         </main>
         {{>footer}}

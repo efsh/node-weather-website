@@ -8,18 +8,18 @@ weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const searchInputVal = searchInput.value;
     
-    weatherText.textContent = "Carregando...";
+    weatherText.textContent = "Loading...";
     locationText.textContent = "";
     
     if (searchInputVal == "") {
-        console.log('Digite um nome para a cidade');
+        console.log('Type a location');
     } else {
-        fetch('/weather/test/?search=' + searchInputVal).then((response) => {
+        fetch('/weather/?search=' + searchInputVal).then((response) => {
             response.json().then((data) => {
                 if (data.error) {
                     console.log(data.error);
                 } else {
-                    weatherText.textContent = data.temp;
+                    weatherText.textContent = data.temp + '°C';
                     locationText.textContent = data.location;
                 }
             });
