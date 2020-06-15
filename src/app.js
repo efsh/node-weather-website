@@ -57,15 +57,20 @@ app.get('/weather', (req, res) => {
         
         //from ES6: 
         //{ temp, location }  -> object destructuring 
-        forecast(data, (error, {temp, location}) => {
+        forecast(data, (error, forecast) => {
         
             if (error) {
                 return console.log(error);
             }
     
             res.send({
-                location : location,
-                temp : temp
+                location : forecast.location,
+                temp : forecast.temp,
+                icon : forecast.icon,
+                description : forecast.description,
+                humidity : forecast.humidity,
+                feelslike: forecast. feelslike,
+                uv : forecast.uv
             });
             
         });

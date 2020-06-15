@@ -11,14 +11,21 @@ const fore = ({lat, long} = {}, callback) => {
         } else if (body.current == undefined) {
             callback('Cidade não localizada', undefined);
         } else {
-            const temp = {
+
+            console.log(body);
+            const forecast = {
                 temp: body.current.temperature,
+                icon : body.current.weather_icons,
+                description: body.current.weather_descriptions,
+                humidity: body.current.humidity,
+                feelslike: body.current.feelslike,
+                uv: body.current.uv_index,
                 location: body.location.name + 
                 ' / ' + body.location.region + 
                 ' - ' + body.location.country
             } 
                 
-            callback(undefined, temp);
+            callback(undefined, forecast);
         }
     });
 
